@@ -55,4 +55,23 @@ public enum HttpCode {
 		return this.value.toString();
 	}
 
+	public static HttpCode valueOf(Integer value) {
+		if (value != null) {
+			for (HttpCode httpCode : values()) {
+				if (httpCode.value.intValue() == value.intValue()) {
+					return httpCode;
+				}
+			}
+		}
+		return null;
+	}
+
+	public boolean is(HttpCode httpCode) {
+		return  httpCode != null && httpCode.value.intValue() == this.value.intValue();
+	}
+
+	public boolean is(Integer value) {
+		return value != null && value.intValue() == this.value.intValue();
+	}
+
 }

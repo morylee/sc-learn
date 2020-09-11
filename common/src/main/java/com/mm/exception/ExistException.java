@@ -4,6 +4,8 @@ import com.mm.constant.HttpCode;
 
 public class ExistException extends BaseException {
 
+	private static final long serialVersionUID = -6334021504866714477L;
+
 	public ExistException() {
 	}
 

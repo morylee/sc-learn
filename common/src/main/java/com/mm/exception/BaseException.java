@@ -4,6 +4,8 @@ import com.mm.constant.HttpCode;
 
 public abstract class BaseException extends RuntimeException {
 
+	private static final long serialVersionUID = 8053680912554731882L;
+
 	public BaseException() {
 	}
 
