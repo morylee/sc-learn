@@ -1,0 +1,66 @@
+server:
+  port: 18080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@localhost:12000/eureka/
+  instance:
+    instance-id: gateway-web:18080
+    prefer-ip-address: true # 优先注册IP地址而不是hostname
+  healthcheck:
+    enabled: true # 启用健康检查,注意:需要引用spring boot actuator
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: gateway-web
+  cloud:
+    gateway:
+      routes:
+      - id: auth-service
+        uri: lb://auth-service
+        predicates:
+        - Path=/ua/**
+        filters:
+        - StripPrefix=1
+        - name: Hystrix
+          args:
+            name: mainFallback
+            fallbackUri: forward:/gateway/fallback
+      - id: mq-service
+        uri: lb://mq-service
+        predicates:
+        - Path=/ms/**
+        filters:
+        - StripPrefix=1
+        - name: Hystrix
+          args:
+            name: mainFallback
+            fallbackUri: forward:/gateway/fallback
+      - id: user-service
+        uri: lb://user-service
+        predicates:
+        - Path=/us/**
+        filters:
+        - StripPrefix=1
+        - name: Hystrix
+          args:
+            name: mainFallback
+            fallbackUri: forward:/gateway/fallback
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 全局熔断器5s超时
+            timeoutInMilliseconds: 5000
+    # da 服务 熔断超时
+    mainFallback:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000

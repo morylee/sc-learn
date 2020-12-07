@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author mory.lee
+ */
 @Service
 public class RedisUtil {
 

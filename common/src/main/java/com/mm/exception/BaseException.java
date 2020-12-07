@@ -1,7 +1,14 @@
 package com.mm.exception;
 
-import com.mm.constant.HttpCode;
+import com.mm.support.BaseResponse;
+import com.mm.support.HttpCode;
+import com.mm.util.ResponseUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.ui.ModelMap;
 
+/**
+ * @author mory.lee
+ */
 public abstract class BaseException extends RuntimeException {
 
 	private static final long serialVersionUID = 8053680912554731882L;
@@ -22,5 +29,13 @@ public abstract class BaseException extends RuntimeException {
 	}
 
 	protected abstract HttpCode getHttpCode();
+
+	public BaseResponse handler() {
+		BaseResponse baseResponse = ResponseUtil.buildResponse(getHttpCode());
+		if (StringUtils.isNotBlank(getMessage())) {
+			baseResponse.setMessage(getMessage());
+		}
+		return baseResponse;
+	}
 
 }

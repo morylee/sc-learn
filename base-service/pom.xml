@@ -13,6 +13,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>eureka-server</module>
+        <module>auth-service</module>
+        <module>gateway-web</module>
+        <module>auth-client</module>
+        <module>auth-resource</module>
     </modules>
 
 </project>

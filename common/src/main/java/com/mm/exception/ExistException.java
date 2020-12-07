@@ -1,7 +1,10 @@
 package com.mm.exception;
 
-import com.mm.constant.HttpCode;
+import com.mm.support.HttpCode;
 
+/**
+ * @author mory.lee
+ */
 public class ExistException extends BaseException {
 
 	private static final long serialVersionUID = -6334021504866714477L;

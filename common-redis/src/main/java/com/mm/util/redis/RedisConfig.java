@@ -15,6 +15,9 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import java.time.Duration;
 
+/**
+ * @author mory.lee
+ */
 @Configuration
 public class RedisConfig {
 

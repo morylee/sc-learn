@@ -16,15 +16,12 @@
 
     <modules>
         <module>common</module>
-        <module>common-api</module>
         <module>common-redis</module>
-        <module>base-service</module>
-        <module>user-service</module>
         <module>common-service</module>
+        <module>base-service</module>
         <module>service-api</module>
-        <module>message-service</module>
-        <module>auth-center</module>
-        <module>auth-service</module>
+        <module>main-service</module>
+        <module>third-service</module>
     </modules>
 
     <properties>
@@ -39,9 +36,12 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-codec.version>1.9</commons-codec.version>
         <slf4j-api.version>1.7.1</slf4j-api.version>
-        <httpclient.version>4.3.3</httpclient.version>
+        <httpclient.version>4.5.11</httpclient.version>
+        <httpcore.version>4.4.13</httpcore.version>
         <mybatis.version>3.5.3</mybatis.version>
         <mybatis-spring.version>2.0.3</mybatis-spring.version>
+        <org.aspectj.version>1.9.2</org.aspectj.version>
+        <javax.servlet.version>4.0.1</javax.servlet.version>
     </properties>
 
     <dependencyManagement>
@@ -55,7 +55,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR5</version>
+                <version>${springcloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -64,6 +64,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!-- mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
@@ -95,6 +96,18 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${alibaba.druid.version}</version>
             </dependency>
+
+            <!-- httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
             <!-- 工具 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -116,18 +129,36 @@
                 <artifactId>fastjson</artifactId>
                 <version>${alibaba.fastjson.version}</version>
             </dependency>
-            <!-- HttpClient -->
+
             <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${httpclient.version}</version>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${org.aspectj.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpmime</artifactId>
-                <version>${httpclient.version}</version>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${org.aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

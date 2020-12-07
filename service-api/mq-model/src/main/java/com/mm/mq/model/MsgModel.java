@@ -11,11 +11,11 @@ public class MsgModel implements Serializable {
 	private String from;
 	private String toUuid;
 	private String to;
-	private MsgType msgType;
+	private String msgType;
 	private Date createdAt;
 	private String title;
 	private String templateUuid;
-	private Map<String, String> extData;
+	private Map<String, Object> extData;
 
 	public String getFromUuid() {
 		return fromUuid;
@@ -49,11 +49,11 @@ public class MsgModel implements Serializable {
 		this.to = to;
 	}
 
-	public MsgType getMsgType() {
+	public String getMsgType() {
 		return msgType;
 	}
 
-	public void setMsgType(MsgType msgType) {
+	public void setMsgType(String msgType) {
 		this.msgType = msgType;
 	}
 
@@ -81,11 +81,11 @@ public class MsgModel implements Serializable {
 		this.templateUuid = templateUuid;
 	}
 
-	public Map<String, String> getExtData() {
+	public Map<String, Object> getExtData() {
 		return extData;
 	}
 
-	public void setExtData(Map<String, String> extData) {
+	public void setExtData(Map<String, Object> extData) {
 		this.extData = extData;
 	}
 

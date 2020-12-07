@@ -1,7 +1,10 @@
 package com.mm.exception;
 
-import com.mm.constant.HttpCode;
+import com.mm.support.HttpCode;
 
+/**
+ * @author mory.lee
+ */
 public class IllegalArgumentException extends BaseException {
 
 	private static final long serialVersionUID = 8513270528651845608L;

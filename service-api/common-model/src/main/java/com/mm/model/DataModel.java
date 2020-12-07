@@ -20,18 +20,18 @@ public class DataModel<T> extends BaseModel<T> {
 
 	@Override
 	public void preInsert() {
-		if (getIsUpdate()) {
-			this.updatedAt = new Date();
-		}
-	}
-
-	@Override
-	public void preUpdate() {
 		if (getIsNew()) {
 			setUuid(GeneratorUtil.uuid());
 		}
 		this.createdAt = new Date();
 		this.updatedAt = new Date();
+	}
+
+	@Override
+	public void preUpdate() {
+		if (getIsUpdate()) {
+			this.updatedAt = new Date();
+		}
 	}
 
 	public Date getCreatedAt() {
