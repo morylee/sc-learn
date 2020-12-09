@@ -1,8 +1,8 @@
 package com.mm.mq.controller;
 
-import com.mm.common.controller.BaseController;
+import com.mm.base.controller.BaseController;
 import com.mm.mq.service.RabbitSysService;
-import com.mm.support.Inner;
+import com.mm.base.support.Inner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,6 @@
 package com.mm.user.feign;
 
-import com.mm.support.BaseResponse;
+import com.mm.base.support.BaseResponse;
 import com.mm.user.hystrix.MessageFeignServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;

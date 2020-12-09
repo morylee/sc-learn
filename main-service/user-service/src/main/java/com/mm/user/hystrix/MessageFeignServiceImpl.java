@@ -1,6 +1,6 @@
 package com.mm.user.hystrix;
 
-import com.mm.support.BaseResponse;
+import com.mm.base.support.BaseResponse;
 import com.mm.user.feign.MessageFeignService;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package com.mm.user.service;
 
-import com.mm.common.impl.BaseApiImpl;
+import com.mm.base.impl.BaseApiImpl;
 import com.mm.user.api.UserApi;
 import com.mm.user.model.User;
 import com.mm.user.dao.UserMapper;

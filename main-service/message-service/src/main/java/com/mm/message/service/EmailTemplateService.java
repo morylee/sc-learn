@@ -1,6 +1,6 @@
 package com.mm.message.service;
 
-import com.mm.common.impl.BaseApiImpl;
+import com.mm.base.impl.BaseApiImpl;
 import com.mm.message.api.EmailTemplateApi;
 import com.mm.message.dao.EmailTemplateMapper;
 import com.mm.message.model.EmailTemplate;

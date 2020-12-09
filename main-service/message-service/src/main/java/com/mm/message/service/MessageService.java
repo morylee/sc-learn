@@ -1,13 +1,13 @@
 package com.mm.message.service;
 
-import com.mm.common.impl.BaseApiImpl;
+import com.mm.base.impl.BaseApiImpl;
 import com.mm.message.api.MessageApi;
 import com.mm.message.dao.MessageMapper;
 import com.mm.message.model.EmailTemplate;
 import com.mm.message.model.Message;
 import com.mm.message.model.MessageTemplate;
 import com.mm.mq.model.MsgModel;
-import com.mm.util.TypeParseUtil;
+import com.mm.base.util.TypeParseUtil;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

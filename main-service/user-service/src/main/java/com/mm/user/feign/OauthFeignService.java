@@ -13,7 +13,7 @@ import java.util.Map;
  * @author mory.lee
  */
 @Service
-@FeignClient(value = "auth-service", fallback = OauthFeignServiceImpl.class)
+@FeignClient(value = "auth-server", fallback = OauthFeignServiceImpl.class)
 public interface OauthFeignService {
 
 	@PostMapping(value = "/oauth/token")

@@ -1,13 +1,13 @@
 package com.mm.user.controller;
 
-import com.mm.common.controller.BaseController;
-import com.mm.config.Resources;
-import com.mm.exception.ExistException;
-import com.mm.exception.NotFoundException;
+import com.mm.base.controller.BaseController;
+import com.mm.base.config.Resources;
+import com.mm.base.exception.ExistException;
+import com.mm.base.exception.NotFoundException;
 import com.mm.user.model.User;
 import com.mm.user.feign.OauthFeignService;
 import com.mm.user.service.UserService;
-import com.mm.util.Map2ModelUtil;
+import com.mm.base.util.Map2ModelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;

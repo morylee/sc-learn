@@ -1,6 +1,6 @@
 package com.mm.message.api;
 
-import com.mm.common.api.BaseApi;
+import com.mm.base.api.BaseApi;
 import com.mm.message.model.Message;
 
 /**

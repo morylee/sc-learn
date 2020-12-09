@@ -16,12 +16,12 @@
 
     <modules>
         <module>common</module>
-        <module>common-redis</module>
-        <module>common-service</module>
-        <module>base-service</module>
         <module>service-api</module>
         <module>main-service</module>
         <module>third-service</module>
+        <module>basic-service</module>
+        <module>main-server</module>
+        <module>basic-plugin</module>
     </modules>
 
     <properties>

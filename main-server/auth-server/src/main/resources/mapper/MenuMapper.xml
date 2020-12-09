@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mm.auth.server.dao.MenuMapper" >
+
+    <resultMap id="BaseResultMap" type="com.mm.auth.server.model.Menu" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="code" property="code" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="loadAllByUsername" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select m.id, m.code
+        from t_menu m
+        join t_role_menu rm on rm.menu_id = m.id
+        join t_user_role ur on ur.role_id = rm.role_id
+        join t_user u on u.id = ur.user_id
+        where u.name=#{0}
+    </select>
+
+</mapper>
