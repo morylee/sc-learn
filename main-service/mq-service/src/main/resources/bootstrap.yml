@@ -1,3 +1,6 @@
+server:
+  port: 12020
+
 spring:
   profiles:
     active: dev
