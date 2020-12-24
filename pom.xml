@@ -42,6 +42,7 @@
         <mybatis-spring.version>2.0.3</mybatis-spring.version>
         <org.aspectj.version>1.9.2</org.aspectj.version>
         <javax.servlet.version>4.0.1</javax.servlet.version>
+        <surefire-plugin.version>2.20.1</surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
