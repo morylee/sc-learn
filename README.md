@@ -91,9 +91,9 @@ config-server（port：12005-12009）
 
 auth-server（port：12010-12014）
 
-message-service（port：12020-12024）
+mq-service（port：12020-12024）
 
-mq-service（port：12025-12029）
+message-service（port：12025-12029）
 
 user-service（port：12030-12034）
 
